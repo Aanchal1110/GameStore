@@ -1,0 +1,14 @@
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\bin\Debug\net10.0\Hellowrld.exe
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\bin\Debug\net10.0\Hellowrld.deps.json
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\bin\Debug\net10.0\Hellowrld.runtimeconfig.json
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\bin\Debug\net10.0\Hellowrld.dll
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\bin\Debug\net10.0\Hellowrld.pdb
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.AssemblyInfoInputs.cache
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.AssemblyInfo.cs
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.csproj.CoreCompileInputs.cache
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.dll
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\refint\Hellowrld.dll
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.pdb
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\Hellowrld.genruntimeconfig.cache
+C:\Users\aanch\downloads\dotnet-course-code\Hellowrld\obj\Debug\net10.0\ref\Hellowrld.dll

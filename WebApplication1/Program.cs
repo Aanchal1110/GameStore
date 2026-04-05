@@ -13,5 +13,5 @@ var conString="Data Source=GameStore.db";
 builder.Services.AddSqlite<GameStoreContext>(conString);
 var app = builder.Build();
 app.MapGamesEndPoints();
-
+app.MigrateDb();
 app.Run();

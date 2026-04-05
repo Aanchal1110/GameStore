@@ -54,10 +54,10 @@ group.MapPut("/{id}",(int id, UpdateGameDto UpdatedGameDto) =>
     }
     games[index]=new GameDto(
         id,
-        UpdatedGameDto.Name,
-        UpdatedGameDto.Genre,
-        UpdatedGameDto.Price,
-        UpdatedGameDto.ReleaseDate
+        UpdatedGameDto.name,
+        UpdatedGameDto.genre,
+        UpdatedGameDto.price,
+        UpdatedGameDto.releaseDate
     );
     return Results.NoContent();
 });

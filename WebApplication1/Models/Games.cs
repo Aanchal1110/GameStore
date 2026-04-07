@@ -9,6 +9,8 @@ public class Games
 
     public Genre? Genre{get; set;}
 
+    public int genreId{get;set;}
+
     public decimal price{get; set;}
 
     public DateOnly ReleaseDate{get;set;}

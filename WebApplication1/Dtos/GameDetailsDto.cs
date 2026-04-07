@@ -1,9 +1,9 @@
 namespace WebApplication1.Dtos;
 
-public record GameDto(
+public record GameDetailsDto(
     int Id,
     string name,
-    int genre,
+    int genreId,
     decimal price,
     DateOnly ReleaseDate
 

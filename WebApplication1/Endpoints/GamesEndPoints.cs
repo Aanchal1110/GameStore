@@ -1,5 +1,7 @@
 using System;
+using WebApplication1.Data;
 using WebApplication1.Dtos;
+using WebApplication1.Models;
 
 namespace WebApplication1.Endpoints;
 
@@ -28,17 +30,17 @@ MapGet("/{id}",(int id) => {
 WithName(GetGameEndpointName);
 
 //POST games
-group.MapPost("/",(CreateDto newGame) =>
+group.MapPost("/",(CreateDto newGame, GameStoreContext dbContext) =>
 {
-    GameDto game= new(
-        games.Count+1,
-        newGame.name,
-        newGame.genre,
-        newGame.price,
-        newGame.releaseDate
-
-    );
-    games.Add(game);
+    Games game = new()
+    {
+        Name=newGame.name, 
+        genreId = newGame.genreId,
+        price=newGame.price,
+        ReleaseDate=newGame.releaseDate
+    };
+    dbContext.Games.Add(game);
+    dbContext.Sav
     return Results.CreatedAtRoute(GetGameEndpointName, new {id=game.Id},game);
 });
 

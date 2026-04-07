@@ -40,8 +40,17 @@ group.MapPost("/",(CreateDto newGame, GameStoreContext dbContext) =>
         ReleaseDate=newGame.releaseDate
     };
     dbContext.Games.Add(game);
-    dbContext.Sav
-    return Results.CreatedAtRoute(GetGameEndpointName, new {id=game.Id},game);
+    dbContext.SaveChanges();
+
+    GameDetailsDto gameDetailsDto=new(
+        game.Id,
+        game.Name,
+        game.genreId,
+        game.price,
+        game.ReleaseDate
+    );
+
+    return Results.CreatedAtRoute(GetGameEndpointName, new {id=gameDetailsDto.Id},gameDetailsDto);
 });
 
 

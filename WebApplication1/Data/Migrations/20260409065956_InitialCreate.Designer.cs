@@ -11,7 +11,7 @@ using WebApplication1.Data;
 namespace WebApplication1.Data.Migrations
 {
     [DbContext(typeof(GameStoreContext))]
-    [Migration("20260405081345_InitialCreate")]
+    [Migration("20260409065956_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,9 +26,6 @@ namespace WebApplication1.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("GenreId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -36,12 +33,15 @@ namespace WebApplication1.Data.Migrations
                     b.Property<DateOnly>("ReleaseDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("genreId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("price")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GenreId");
+                    b.HasIndex("genreId");
 
                     b.ToTable("Games");
                 });
@@ -65,7 +65,9 @@ namespace WebApplication1.Data.Migrations
                 {
                     b.HasOne("WebApplication1.Models.Genre", "Genre")
                         .WithMany()
-                        .HasForeignKey("GenreId");
+                        .HasForeignKey("genreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Genre");
                 });

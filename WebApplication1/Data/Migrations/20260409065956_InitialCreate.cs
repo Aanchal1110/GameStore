@@ -31,7 +31,7 @@ namespace WebApplication1.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
-                    GenreId = table.Column<int>(type: "INTEGER", nullable: true),
+                    genreId = table.Column<int>(type: "INTEGER", nullable: false),
                     price = table.Column<decimal>(type: "TEXT", nullable: false),
                     ReleaseDate = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },
@@ -39,16 +39,17 @@ namespace WebApplication1.Data.Migrations
                 {
                     table.PrimaryKey("PK_Games", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Games_Genres_GenreId",
-                        column: x => x.GenreId,
+                        name: "FK_Games_Genres_genreId",
+                        column: x => x.genreId,
                         principalTable: "Genres",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Games_GenreId",
+                name: "IX_Games_genreId",
                 table: "Games",
-                column: "GenreId");
+                column: "genreId");
         }
 
         /// <inheritdoc />

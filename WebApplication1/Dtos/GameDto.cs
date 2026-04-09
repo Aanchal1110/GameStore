@@ -3,7 +3,7 @@ namespace WebApplication1.Dtos;
 public record GameDto(
     int Id,
     string name,
-    int genre,
+    string genre,
     decimal price,
     DateOnly ReleaseDate
 

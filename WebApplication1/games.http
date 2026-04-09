@@ -9,10 +9,13 @@ Content-Type: application/json
 
 {
     "name":"Super Mario Bros. Wonder",
-    "genre":"Platformer",
+    "genreId":1,
     "price":45.33,
     "releaseDate":"2023-12-23"
 }
+
+
+
 
 ###
 PUT http://localhost:5162/games/1

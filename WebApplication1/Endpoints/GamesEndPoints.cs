@@ -21,10 +21,17 @@ const string GetGameEndpointName = "GetGame";
 
 //GET games/id
 group.
-MapGet("/{id}",(int id) => {
-   var game= games.Find(game =>game.Id==id);
+MapGet("/{id}",async (int id, GameStoreContext dbContext) => {
+   var game= await dbContext.Games.FindAsync(id);
+
    
-   return game is null? Results.NotFound():Results.Ok(game);
+   return game is null? Results.NotFound():Results.Ok(new GameDetailsDto(
+    game.Id,
+    game.Name,
+    game.genreId,
+    game.price,
+    game.ReleaseDate
+   ));
    }
      ).
 WithName(GetGameEndpointName);

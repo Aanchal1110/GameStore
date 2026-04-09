@@ -30,7 +30,7 @@ MapGet("/{id}",(int id) => {
 WithName(GetGameEndpointName);
 
 //POST games
-group.MapPost("/",(CreateDto newGame, GameStoreContext dbContext) =>
+group.MapPost("/",async (CreateDto newGame, GameStoreContext dbContext) =>
 {
     Games game = new()
     {
@@ -40,7 +40,7 @@ group.MapPost("/",(CreateDto newGame, GameStoreContext dbContext) =>
         ReleaseDate=newGame.releaseDate
     };
     dbContext.Games.Add(game);
-    dbContext.SaveChanges();
+   await dbContext.SaveChangesAsync();
 
     GameDetailsDto gameDetailsDto=new(
         game.Id,
